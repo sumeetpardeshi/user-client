@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --font-body: var(--font-outfit), system-ui, sans-serif;
+  /* Legacy palette names kept for any stray references; tuned for light UI. */
+  --color-dawn-950: #fafafa;
+  --color-dawn-900: #ffffff;
+  --color-dawn-800: #f4f4f5;
+  --color-ember-400: #d97706;
+  --color-ember-300: #b45309;
+  --color-mist-200: #3f3f46;
+  --color-mist-100: #18181b;
+}
+
+body {
+  font-family: var(--font-body);
+  background:
+    radial-gradient(900px 480px at 12% -8%, rgba(251, 191, 36, 0.12) 0%, transparent 55%),
+    radial-gradient(700px 420px at 88% 0%, rgba(244, 244, 245, 0.9) 0%, transparent 45%),
+    linear-gradient(180deg, #fafafa 0%, #f4f4f5 55%, #e4e4e7 100%);
+  color: var(--color-mist-100);
+  min-height: 100vh;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: rise 0.6s ease-out both;
+}
