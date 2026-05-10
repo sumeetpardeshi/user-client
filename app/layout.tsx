@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Outfit } from "next/font/google";
+
+import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -15,8 +17,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Research Brief — morning readout",
-  description: "Schedule Tensorlake research and read Supabase findings",
+  title: "SleeperAgent — overnight research brief",
+  description: "SleeperAgent: schedule Tensorlake research and read Supabase findings before the market opens.",
 };
 
 export default function RootLayout({
@@ -26,7 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${fraunces.variable} ${outfit.variable}`}>
-      <body className={`${outfit.className} antialiased`}>{children}</body>
+      <body className={`${outfit.className} antialiased`}>
+        <SiteHeader />
+        {children}
+      </body>
     </html>
   );
 }
