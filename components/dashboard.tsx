@@ -144,28 +144,21 @@ function TimelineFindingRow({ f }: { f: ResearchFindingRow }) {
   );
 }
 
-function BriefingVideoPlaceholder() {
+function BriefingVideo() {
   return (
-    <aside
-      className="w-full max-w-xl lg:max-w-none lg:justify-self-end"
-      aria-label="Video briefing placeholder"
-    >
-      <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-gradient-to-br from-zinc-100 to-zinc-200/80 shadow-inner ring-1 ring-zinc-900/5">
-        <div className="relative flex aspect-video w-full flex-col items-center justify-center gap-2 px-6 py-8">
-          <div
-            className="flex size-14 items-center justify-center rounded-full border border-zinc-300/80 bg-white/90 text-zinc-500 shadow-sm"
-            aria-hidden
+    <aside className="w-full max-w-xl lg:max-w-none lg:justify-self-end" aria-label="Video briefing">
+      <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-950 shadow-lg ring-1 ring-zinc-900/10">
+        <div className="relative aspect-video w-full max-h-[min(56vh,28rem)]">
+          <video
+            className="absolute inset-0 h-full w-full object-contain"
+            controls
+            playsInline
+            preload="metadata"
+            aria-label="SleeperAgent morning video briefing"
           >
-            <svg viewBox="0 0 24 24" fill="currentColor" className="ml-0.5 size-7">
-              <path d="M8 5v14l11-7L8 5z" />
-            </svg>
-          </div>
-          <p className="font-[family-name:var(--font-fraunces)] text-base font-medium text-zinc-700">
-            Video briefing
-          </p>
-          <p className="max-w-[16rem] text-center text-xs leading-relaxed text-zinc-500">
-            Placeholder for a future narrated morning readout.
-          </p>
+            <source src="/sleeperagent-briefing.mp4" type="video/mp4" />
+            Your browser does not support embedded video.
+          </video>
         </div>
       </div>
     </aside>
@@ -366,7 +359,7 @@ export function Dashboard() {
               scannable layout.
             </p>
           </div>
-          <BriefingVideoPlaceholder />
+          <BriefingVideo />
         </div>
       </header>
 
